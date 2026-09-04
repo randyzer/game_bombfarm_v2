@@ -1,0 +1,8 @@
+---
+import LegalPage from "../components/LegalPage.astro";
+import { getFixedPageByRoute } from "../core/fixed-pages";
+
+const page = getFixedPageByRoute("/about/");
+---
+
+<LegalPage page={page} copyType="about" kicker="Editorial standard" />

@@ -1,0 +1,8 @@
+---
+import LegalPage from "../components/LegalPage.astro";
+import { getFixedPageByRoute } from "../core/fixed-pages";
+
+const page = getFixedPageByRoute("/privacy/");
+---
+
+<LegalPage page={page} copyType="privacy" kicker="Privacy notice" />

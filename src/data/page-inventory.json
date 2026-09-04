@@ -1,0 +1,1435 @@
+[
+  {
+    "pageId": "home",
+    "route": "/",
+    "pageType": "home",
+    "cluster": "home",
+    "module": "core",
+    "priority": 100,
+    "visibility": "public",
+    "publicationStatus": "published",
+    "contentStatus": "ready",
+    "developmentStatus": "ready",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "index",
+    "title": "Bomb Farm Wiki - Guides, Gear, Heroes and Updates",
+    "description": "A source-aware Bomb Farm Wiki for beginner help, heroes, gear, skill tree, Steam Market safety, codes, achievements, and official updates.",
+    "publishedAt": "2026-09-04",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm wiki",
+    "tags": [
+      "phase:p0",
+      "guides",
+      "wiki"
+    ],
+    "relatedPageIds": [
+      "guide.getting-started",
+      "hub.guides",
+      "hub.tools"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "publishedAt": "2026-08-28",
+        "evidenceNote": "Steam store verifies the game identity, platform, developer, core systems, and release metadata."
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "pageId": "hub.guides",
+    "route": "/guides/",
+    "pageType": "hub",
+    "cluster": "guides",
+    "module": "guides",
+    "feature": "guides",
+    "priority": 98,
+    "visibility": "public",
+    "publicationStatus": "published",
+    "contentStatus": "ready",
+    "developmentStatus": "ready",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "index",
+    "title": "Bomb Farm Guides Hub for New and Returning Players",
+    "description": "Browse Bomb Farm guides for starting out, core gameplay, controls, progression, gear, the skill tree, Steam Market safety, and codes.",
+    "publishedAt": "2026-09-04",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm guide",
+    "tags": [
+      "phase:p0",
+      "guides",
+      "hub"
+    ],
+    "relatedPageIds": [
+      "home",
+      "guide.getting-started",
+      "guide.how-to-play"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam store identifies the major gameplay systems used to organize the guide hub."
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "pageId": "guide.getting-started",
+    "route": "/guides/getting-started/",
+    "pageType": "guide",
+    "cluster": "guides",
+    "module": "guides",
+    "feature": "guides",
+    "priority": 96,
+    "visibility": "public",
+    "publicationStatus": "published",
+    "contentStatus": "ready",
+    "developmentStatus": "ready",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "index",
+    "title": "Bomb Farm Getting Started Guide for Your First Session",
+    "description": "Start Bomb Farm with a practical first-session path, account-link cautions, and clear next steps for early idle progression.",
+    "publishedAt": "2026-09-04",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm beginner guide",
+    "tags": [
+      "phase:p0",
+      "beginner",
+      "guides"
+    ],
+    "contentRef": {
+      "collection": "guides",
+      "slug": "getting-started"
+    },
+    "relatedPageIds": [
+      "guide.how-to-play",
+      "guide.controls",
+      "guide.codes"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam store verifies Bomb Farm's platform, free-to-play status, and high-level idle RPG loop."
+      },
+      {
+        "sourceUrl": "https://store.steampowered.com/appreviews/4892010?json=1&filter=recent&language=english&purchase_type=all&num_per_page=20",
+        "sourceType": "community",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Recent Steam reviews provide discovery evidence that onboarding clarity is a player concern."
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "pageId": "guide.how-to-play",
+    "route": "/guides/how-to-play/",
+    "pageType": "guide",
+    "cluster": "guides",
+    "module": "guides",
+    "feature": "guides",
+    "priority": 94,
+    "visibility": "public",
+    "publicationStatus": "published",
+    "contentStatus": "ready",
+    "developmentStatus": "ready",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "index",
+    "title": "How to Play Bomb Farm Without Losing the Main Loop",
+    "description": "Learn Bomb Farm's core loop around bomber squads, resource gathering, teams, gear, the skill tree, worlds, and Market safety.",
+    "publishedAt": "2026-09-04",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "how to play Bomb Farm",
+    "tags": [
+      "phase:p0",
+      "how-to",
+      "guides"
+    ],
+    "contentRef": {
+      "collection": "guides",
+      "slug": "how-to-play"
+    },
+    "relatedPageIds": [
+      "guide.getting-started",
+      "guide.progression",
+      "guide.gear-and-ritual"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam store description names the core loop and major systems."
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "pageId": "guide.controls",
+    "route": "/guides/controls/",
+    "pageType": "guide",
+    "cluster": "guides",
+    "module": "guides",
+    "feature": "guides",
+    "priority": 88,
+    "visibility": "public",
+    "publicationStatus": "published",
+    "contentStatus": "ready",
+    "developmentStatus": "ready",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "index",
+    "title": "Bomb Farm Controls and Client UI Orientation",
+    "description": "Understand Bomb Farm's Windows client, keyboard and mouse support, save-anytime category, and known UI clarity limits before deeper play.",
+    "publishedAt": "2026-09-04",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm controls",
+    "tags": [
+      "phase:p0",
+      "controls",
+      "guides"
+    ],
+    "contentRef": {
+      "collection": "guides",
+      "slug": "controls"
+    },
+    "relatedPageIds": [
+      "guide.getting-started",
+      "guide.how-to-play",
+      "guide.system-requirements"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam categories list keyboard and mouse options plus save-anytime and pace accessibility tags."
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "pageId": "guide.progression",
+    "route": "/guides/progression/",
+    "pageType": "guide",
+    "cluster": "progression",
+    "module": "guides",
+    "feature": "guides",
+    "priority": 92,
+    "visibility": "public",
+    "publicationStatus": "published",
+    "contentStatus": "ready",
+    "developmentStatus": "ready",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "index",
+    "title": "Bomb Farm Progression Guide for Worlds and Stages",
+    "description": "Plan Bomb Farm progression across five worlds, five difficulties, 600 stages, and official achievement milestones.",
+    "publishedAt": "2026-09-04",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm progression",
+    "tags": [
+      "phase:p0",
+      "progression",
+      "worlds"
+    ],
+    "contentRef": {
+      "collection": "guides",
+      "slug": "progression"
+    },
+    "relatedPageIds": [
+      "guide.how-to-play",
+      "guide.achievements",
+      "guide.skill-tree"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam store states that Bomb Farm has five difficulties, five worlds, and 600 stages."
+      },
+      {
+        "sourceUrl": "https://steamcommunity.com/stats/4892010/achievements",
+        "sourceType": "first-party-platform",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam achievements verify difficulty-clear and Stage 600 milestone language."
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "pageId": "guide.gear-and-ritual",
+    "route": "/guides/gear-and-ritual/",
+    "pageType": "guide",
+    "cluster": "gear",
+    "module": "guides",
+    "feature": "guides",
+    "priority": 93,
+    "visibility": "public",
+    "publicationStatus": "published",
+    "contentStatus": "ready",
+    "developmentStatus": "ready",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "index",
+    "title": "Bomb Farm Gear and Ritual Guide for Safe Upgrades",
+    "description": "Learn Bomb Farm gear drops, Ritual upgrades, forge milestones, and the item details worth checking in the current game.",
+    "publishedAt": "2026-09-04",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm gear ritual",
+    "tags": [
+      "phase:p0",
+      "gear",
+      "ritual"
+    ],
+    "contentRef": {
+      "collection": "guides",
+      "slug": "gear-and-ritual"
+    },
+    "relatedPageIds": [
+      "guide.how-to-play",
+      "guide.steam-market",
+      "guide.achievements"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam store verifies sealed drops, equipment upgrades from +0 to +15, and duplicate fusion/stars."
+      },
+      {
+        "sourceUrl": "https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=4892010&count=5&maxlength=1000&format=json",
+        "sourceType": "first-party-platform",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam announcements mention chest information, Ritual improvements, and market rarity-frame changes."
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "pageId": "guide.skill-tree",
+    "route": "/guides/skill-tree/",
+    "pageType": "guide",
+    "cluster": "systems",
+    "module": "guides",
+    "feature": "guides",
+    "priority": 91,
+    "visibility": "public",
+    "publicationStatus": "published",
+    "contentStatus": "ready",
+    "developmentStatus": "ready",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "index",
+    "title": "Bomb Farm Skill Tree Planning Guide",
+    "description": "Understand Bomb Farm's account skill tree and make careful upgrade choices while checking current node text and costs in game.",
+    "publishedAt": "2026-09-04",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm skill tree",
+    "tags": [
+      "phase:p0",
+      "skill-tree",
+      "systems"
+    ],
+    "contentRef": {
+      "collection": "guides",
+      "slug": "skill-tree"
+    },
+    "relatedPageIds": [
+      "guide.progression",
+      "guide.hero-roles",
+      "guide.how-to-play"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam store verifies a large Path-of-Exile-inspired account skill tree."
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "pageId": "guide.steam-market",
+    "route": "/guides/steam-market/",
+    "pageType": "guide",
+    "cluster": "market",
+    "module": "guides",
+    "feature": "guides",
+    "priority": 90,
+    "visibility": "public",
+    "publicationStatus": "published",
+    "contentStatus": "ready",
+    "developmentStatus": "ready",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "index",
+    "title": "Bomb Farm Steam Market Safety and Trading Guide",
+    "description": "Learn Bomb Farm Steam Market safety, official trading boundaries, account checks, and why current prices belong on Steam.",
+    "publishedAt": "2026-09-04",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm Steam Market guide",
+    "tags": [
+      "phase:p0",
+      "market",
+      "safety"
+    ],
+    "contentRef": {
+      "collection": "guides",
+      "slug": "steam-market"
+    },
+    "relatedPageIds": [
+      "guide.gear-and-ritual",
+      "guide.codes",
+      "faq"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Release-gate recheck on September 4, 2026 confirmed that the Steam store still says rare items can be traded with other players on the Steam Community Market."
+      },
+      {
+        "sourceUrl": "https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=4892010&count=5&maxlength=1000&format=json",
+        "sourceType": "first-party-platform",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Release-gate recheck on September 4, 2026 confirmed the current official announcements still describe Market access, validation, inventory, inspection, and messaging changes."
+      },
+      {
+        "sourceUrl": "https://store.steampowered.com/eula/4892010_eula_0",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Release-gate recheck on September 4, 2026 confirmed the Bomb Farm EULA still states the virtual-item, player-set Market price, official-system trading, and outside real-money trading boundaries."
+      },
+      {
+        "sourceUrl": "https://help.steampowered.com/en/faqs/view/451E-96B3-D194-50FC",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Release-gate recheck on September 4, 2026 confirmed Steam Support's current trading and Market restriction guidance, including account-state, Steam Guard, hold, and cooldown caveats."
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "pageId": "guide.codes",
+    "route": "/guides/codes/",
+    "pageType": "guide",
+    "cluster": "codes",
+    "module": "guides",
+    "feature": "guides",
+    "priority": 89,
+    "visibility": "public",
+    "publicationStatus": "published",
+    "contentStatus": "ready",
+    "developmentStatus": "ready",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "index",
+    "title": "Bomb Farm Codes and Friend Codes Freshness Guide",
+    "description": "Check the latest official Bomb Farm code notice, its reward and expiry, and how to avoid stale community code lists.",
+    "publishedAt": "2026-09-04",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm codes",
+    "tags": [
+      "phase:p0",
+      "codes",
+      "friend-codes"
+    ],
+    "contentRef": {
+      "collection": "guides",
+      "slug": "codes"
+    },
+    "relatedPageIds": [
+      "guide.getting-started",
+      "guide.steam-market",
+      "patch.latest-update"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://steamcommunity.com/app/4892010/discussions/0/589562598193688309/",
+        "sourceType": "community",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam discussion sample shows players asking where to redeem codes and sharing friend codes."
+      },
+      {
+        "sourceUrl": "https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=4892010&count=5&maxlength=1000&format=json",
+        "sourceType": "first-party-platform",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Release-gate recheck on September 4, 2026 found no newer code notice and confirmed the September 2 KENDO announcement, reward, once-per-account limit, and September 8 expiry timezone."
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "pageId": "hub.heroes",
+    "route": "/heroes/",
+    "pageType": "hub",
+    "cluster": "heroes",
+    "module": "guides",
+    "feature": "guides",
+    "priority": 87,
+    "visibility": "public",
+    "publicationStatus": "published",
+    "contentStatus": "ready",
+    "developmentStatus": "ready",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "index",
+    "title": "Bomb Farm Heroes Hub for Roles, Teams and Energy",
+    "description": "Learn Bomb Farm's four hero roles, three-team structure, and energy rotation before comparing individual heroes.",
+    "publishedAt": "2026-09-04",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm heroes",
+    "tags": [
+      "phase:p0",
+      "heroes",
+      "hub"
+    ],
+    "relatedPageIds": [
+      "guide.hero-roles",
+      "guide.energy-rotation",
+      "guide.skill-tree"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam store verifies hero roles, abilities, and three active teams."
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "pageId": "guide.hero-roles",
+    "route": "/heroes/roles/",
+    "pageType": "guide",
+    "cluster": "heroes",
+    "module": "guides",
+    "feature": "guides",
+    "priority": 86,
+    "visibility": "public",
+    "publicationStatus": "published",
+    "contentStatus": "ready",
+    "developmentStatus": "ready",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "index",
+    "title": "Bomb Farm Hero Roles Explained for Early Teams",
+    "description": "Learn how Bomb Farm's Attacker, Support, Collector, and Specialist roles shape early teams and progression decisions.",
+    "publishedAt": "2026-09-04",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm hero roles",
+    "tags": [
+      "phase:p0",
+      "heroes",
+      "roles"
+    ],
+    "relatedPageIds": [
+      "hub.heroes",
+      "guide.energy-rotation",
+      "guide.skill-tree"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam store names Attacker, Support, Collector, and Specialist as hero roles."
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "pageId": "guide.energy-rotation",
+    "route": "/heroes/energy-rotation/",
+    "pageType": "guide",
+    "cluster": "heroes",
+    "module": "guides",
+    "feature": "guides",
+    "priority": 84,
+    "visibility": "public",
+    "publicationStatus": "published",
+    "contentStatus": "ready",
+    "developmentStatus": "ready",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "index",
+    "title": "Bomb Farm Energy Rotation Guide for Three Teams",
+    "description": "Plan Bomb Farm's three-team idle rotation, keep the mine active, and check exact recovery timing in the current game.",
+    "publishedAt": "2026-09-04",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm energy rotation",
+    "tags": [
+      "phase:p0",
+      "heroes",
+      "energy"
+    ],
+    "relatedPageIds": [
+      "hub.heroes",
+      "guide.hero-roles",
+      "guide.how-to-play"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam store says players can switch between three teams to keep the mine running."
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "pageId": "hub.updates",
+    "route": "/updates/",
+    "pageType": "hub",
+    "cluster": "updates",
+    "module": "news",
+    "priority": 83,
+    "visibility": "public",
+    "publicationStatus": "published",
+    "contentStatus": "ready",
+    "developmentStatus": "ready",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "index",
+    "title": "Bomb Farm Updates Hub and Patch Notes",
+    "description": "Follow official Bomb Farm Steam announcements for codes, rewards, Market changes, stash updates, fixes, and balance notes.",
+    "publishedAt": "2026-09-04",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm updates",
+    "tags": [
+      "phase:p0",
+      "updates",
+      "patch-notes"
+    ],
+    "relatedPageIds": [
+      "patch.latest-update",
+      "guide.codes",
+      "guide.steam-market"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=4892010&count=5&maxlength=1000&format=json",
+        "sourceType": "first-party-platform",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Release-gate Steam News API recheck on September 4, 2026 confirmed the latest official item remains the September 3 Weekly Rewards, Expandable Stashes, and Stability Improvements announcement."
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "pageId": "patch.latest-update",
+    "route": "/updates/latest/",
+    "pageType": "patch",
+    "cluster": "updates",
+    "module": "news",
+    "priority": 82,
+    "visibility": "public",
+    "publicationStatus": "published",
+    "contentStatus": "ready",
+    "developmentStatus": "ready",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "index",
+    "title": "Latest Bomb Farm Update Summary",
+    "description": "Read the latest checked Bomb Farm Steam announcement covering weekly rewards, stash expansion, Return Bonus, Market changes, and stability.",
+    "publishedAt": "2026-09-04",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm patch notes",
+    "tags": [
+      "phase:p0",
+      "updates",
+      "latest"
+    ],
+    "relatedPageIds": [
+      "hub.updates",
+      "guide.codes",
+      "guide.steam-market"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=4892010&count=5&maxlength=1000&format=json",
+        "sourceType": "first-party-platform",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Release-gate Steam News API recheck on September 4, 2026 confirmed the latest official item remains the September 3 Weekly Rewards, Expandable Stashes, and Stability Improvements announcement."
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "pageId": "hub.tools",
+    "route": "/tools/",
+    "pageType": "hub",
+    "cluster": "tools",
+    "module": "tools",
+    "priority": 80,
+    "visibility": "public",
+    "publicationStatus": "published",
+    "contentStatus": "ready",
+    "developmentStatus": "ready",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "index",
+    "title": "Bomb Farm Tools Hub for Checklists and Specs",
+    "description": "Find Bomb Farm checklists and reference pages for achievements, campaign milestones, platform support, and system requirements.",
+    "publishedAt": "2026-09-04",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm tools",
+    "tags": [
+      "phase:p0",
+      "tools",
+      "hub"
+    ],
+    "relatedPageIds": [
+      "guide.achievements",
+      "guide.system-requirements",
+      "home"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://steamcommunity.com/stats/4892010/achievements",
+        "sourceType": "first-party-platform",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam achievements provide a safe first utility page for the tools hub."
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "pageId": "guide.achievements",
+    "route": "/tools/achievements/",
+    "pageType": "guide",
+    "cluster": "tools",
+    "module": "tools",
+    "priority": 79,
+    "visibility": "public",
+    "publicationStatus": "published",
+    "contentStatus": "ready",
+    "developmentStatus": "ready",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "index",
+    "title": "Bomb Farm Achievements Checklist from Steam",
+    "description": "Track Bomb Farm achievement milestones sourced from Steam, including difficulty clears, Stage 600, hero rarity, gear, and Homes goals.",
+    "publishedAt": "2026-09-04",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm achievements",
+    "tags": [
+      "phase:p0",
+      "achievements",
+      "tools"
+    ],
+    "relatedPageIds": [
+      "hub.tools",
+      "guide.progression",
+      "guide.gear-and-ritual"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://steamcommunity.com/stats/4892010/achievements",
+        "sourceType": "first-party-platform",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam achievement page verifies the names and descriptions of Bomb Farm achievements."
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "pageId": "guide.system-requirements",
+    "route": "/tools/system-requirements/",
+    "pageType": "guide",
+    "cluster": "tools",
+    "module": "tools",
+    "priority": 78,
+    "visibility": "public",
+    "publicationStatus": "published",
+    "contentStatus": "ready",
+    "developmentStatus": "ready",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "index",
+    "title": "Bomb Farm System Requirements and Platform Support",
+    "description": "Check Bomb Farm's Windows platform support, minimum PC requirements, recommended hardware, storage, and network needs.",
+    "publishedAt": "2026-09-04",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm system requirements",
+    "tags": [
+      "phase:p0",
+      "requirements",
+      "tools"
+    ],
+    "relatedPageIds": [
+      "hub.tools",
+      "guide.controls",
+      "faq"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam store verifies Windows support and is the source for platform/system information."
+      }
+    ],
+    "confidence": "high"
+  },
+  {
+    "pageId": "faq",
+    "route": "/faq/",
+    "pageType": "guide",
+    "cluster": "home",
+    "module": "guides",
+    "feature": "guides",
+    "priority": 77,
+    "visibility": "public",
+    "publicationStatus": "published",
+    "contentStatus": "ready",
+    "developmentStatus": "ready",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "index",
+    "title": "Bomb Farm FAQ for Codes, Market and Support",
+    "description": "Answer common Bomb Farm questions about codes, the Steam Market, platform support, troubleshooting, heroes, and where to begin.",
+    "publishedAt": "2026-09-04",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm FAQ",
+    "tags": [
+      "phase:p0",
+      "faq",
+      "support"
+    ],
+    "relatedPageIds": [
+      "guide.getting-started",
+      "guide.steam-market",
+      "guide.system-requirements"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Release-gate recheck on September 4, 2026 confirmed the Steam store platform, Market, and game-feature facts used by FAQ entries."
+      },
+      {
+        "sourceUrl": "https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=4892010&count=10&maxlength=5000&format=json",
+        "sourceType": "first-party-platform",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Release-gate recheck on September 4, 2026 confirmed the latest update and KENDO code timing used in FAQ answers."
+      },
+      {
+        "sourceUrl": "https://store.steampowered.com/eula/4892010_eula_0",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Release-gate recheck on September 4, 2026 confirmed the EULA's outside real-money trading and virtual-item boundaries used in FAQ answers."
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "pageId": "browse-all",
+    "route": "/browse/",
+    "pageType": "hub",
+    "cluster": "home",
+    "module": "core",
+    "priority": 55,
+    "visibility": "private",
+    "publicationStatus": "draft",
+    "contentStatus": "planned",
+    "developmentStatus": "planned",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "noindex",
+    "title": "Bomb Farm Browse All Planning Index",
+    "description": "A future generated browse-all page that must be driven by the runtime inventory after implementation, not by a second manual ledger.",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm browse all",
+    "tags": [
+      "phase:p1",
+      "browse",
+      "planned"
+    ],
+    "relatedPageIds": [
+      "home"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://github.com/randyzer/GAME_SITE_STARTER_BASED_gamesop2.2/tree/e4964e1f640763f2c55db9f48446ac0dbe87afa3",
+        "sourceType": "developer",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Starter 2.0 establishes runtime inventory as the future browse-all source."
+      }
+    ],
+    "confidence": "medium"
+  },
+  {
+    "pageId": "guide.house-capsules",
+    "route": "/heroes/house-capsules/",
+    "pageType": "guide",
+    "cluster": "heroes",
+    "module": "guides",
+    "feature": "guides",
+    "priority": 54,
+    "visibility": "private",
+    "publicationStatus": "draft",
+    "contentStatus": "planned",
+    "developmentStatus": "planned",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "noindex",
+    "title": "Bomb Farm House Capsules Draft Expansion",
+    "description": "A planned Bomb Farm House and capsule guide that needs direct in-game or official verification before publication.",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm House capsules",
+    "tags": [
+      "phase:p1",
+      "heroes",
+      "draft"
+    ],
+    "relatedPageIds": [
+      "hub.heroes"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://steamcommunity.com/stats/4892010/achievements",
+        "sourceType": "first-party-platform",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam achievements mention Homes, but detailed House and capsule rules remain unverified."
+      }
+    ],
+    "confidence": "low"
+  },
+  {
+    "pageId": "guide.fusion-rarity",
+    "route": "/heroes/fusion-and-rarity/",
+    "pageType": "guide",
+    "cluster": "heroes",
+    "module": "guides",
+    "feature": "guides",
+    "priority": 53,
+    "visibility": "private",
+    "publicationStatus": "draft",
+    "contentStatus": "planned",
+    "developmentStatus": "planned",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "noindex",
+    "title": "Bomb Farm Fusion and Rarity Draft Guide",
+    "description": "A planned Bomb Farm fusion and rarity guide that will publish only verified duplicate, star, rarity, and ritual details.",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm fusion rarity",
+    "tags": [
+      "phase:p1",
+      "heroes",
+      "draft"
+    ],
+    "relatedPageIds": [
+      "hub.heroes"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam store mentions duplicate fusion and stars, while detailed rarity mechanics remain unverified."
+      }
+    ],
+    "confidence": "low"
+  },
+  {
+    "pageId": "db.abilities",
+    "route": "/abilities/",
+    "pageType": "database",
+    "cluster": "databases",
+    "module": "guides",
+    "feature": "guides",
+    "priority": 52,
+    "visibility": "private",
+    "publicationStatus": "draft",
+    "contentStatus": "planned",
+    "developmentStatus": "planned",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "noindex",
+    "title": "Bomb Farm Abilities Database Draft",
+    "description": "A planned Bomb Farm abilities database for the 20 official abilities after names, effects, and upgrade levels are directly verified.",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm abilities",
+    "tags": [
+      "phase:p1",
+      "database",
+      "abilities"
+    ],
+    "relatedPageIds": [
+      "guide.skill-tree",
+      "guide.hero-roles"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam store verifies 20 abilities upgradeable from level 1 to 10."
+      }
+    ],
+    "confidence": "low"
+  },
+  {
+    "pageId": "db.equipment",
+    "route": "/equipment/",
+    "pageType": "database",
+    "cluster": "databases",
+    "module": "items",
+    "priority": 51,
+    "visibility": "private",
+    "publicationStatus": "draft",
+    "contentStatus": "planned",
+    "developmentStatus": "planned",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "noindex",
+    "title": "Bomb Farm Equipment Database Draft",
+    "description": "A planned Bomb Farm equipment database for verified gear sets, slots, levels, attributes, trade flags, and source-backed item details.",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm equipment",
+    "tags": [
+      "phase:p1",
+      "database",
+      "equipment"
+    ],
+    "relatedPageIds": [
+      "guide.gear-and-ritual",
+      "guide.steam-market"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam store verifies equipment drops and upgrades, but not a complete item database."
+      }
+    ],
+    "confidence": "low"
+  },
+  {
+    "pageId": "db.worlds",
+    "route": "/worlds/",
+    "pageType": "database",
+    "cluster": "databases",
+    "module": "maps",
+    "priority": 50,
+    "visibility": "private",
+    "publicationStatus": "draft",
+    "contentStatus": "planned",
+    "developmentStatus": "planned",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "noindex",
+    "title": "Bomb Farm Worlds Database Draft",
+    "description": "A planned Bomb Farm worlds database for verified world names, difficulty order, stage details, rewards, and unlock requirements.",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm worlds",
+    "tags": [
+      "phase:p1",
+      "database",
+      "worlds"
+    ],
+    "relatedPageIds": [
+      "guide.progression"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam store verifies five worlds, five difficulties, and 600 stages."
+      }
+    ],
+    "confidence": "low"
+  },
+  {
+    "pageId": "db.gems",
+    "route": "/gems/",
+    "pageType": "database",
+    "cluster": "databases",
+    "module": "items",
+    "priority": 49,
+    "visibility": "private",
+    "publicationStatus": "draft",
+    "contentStatus": "planned",
+    "developmentStatus": "planned",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "noindex",
+    "title": "Bomb Farm Gems Database Draft",
+    "description": "A planned Bomb Farm gems database that needs direct verification before publishing gem names, rarity, ritual use, or compatibility.",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm gems",
+    "tags": [
+      "phase:p1",
+      "database",
+      "gems"
+    ],
+    "relatedPageIds": [
+      "guide.gear-and-ritual"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://bombfarmdb.wiki/gems/",
+        "sourceType": "community",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Competitor database evidence supports demand only; gem facts require independent verification."
+      }
+    ],
+    "confidence": "low"
+  },
+  {
+    "pageId": "db.skill-tree",
+    "route": "/skill-tree/",
+    "pageType": "database",
+    "cluster": "databases",
+    "module": "guides",
+    "feature": "guides",
+    "priority": 48,
+    "visibility": "private",
+    "publicationStatus": "draft",
+    "contentStatus": "planned",
+    "developmentStatus": "planned",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "noindex",
+    "title": "Bomb Farm Skill Tree Database Draft",
+    "description": "A planned Bomb Farm skill tree database for verified nodes, costs, branches, and levels after direct source collection.",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm skill tree nodes",
+    "tags": [
+      "phase:p1",
+      "database",
+      "skill-tree"
+    ],
+    "relatedPageIds": [
+      "guide.skill-tree"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam store verifies a large skill tree, while node-level details remain unverified."
+      }
+    ],
+    "confidence": "low"
+  },
+  {
+    "pageId": "tool.squad-planner",
+    "route": "/tools/squad-planner/",
+    "pageType": "planner",
+    "cluster": "tools",
+    "module": "tools",
+    "feature": "planner",
+    "priority": 47,
+    "visibility": "private",
+    "publicationStatus": "draft",
+    "contentStatus": "planned",
+    "developmentStatus": "planned",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "noindex",
+    "title": "Bomb Farm Squad Planner Draft",
+    "description": "A planned Bomb Farm squad planner that needs approved rules before it can model teams, roles, energy, or progression decisions.",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm squad planner",
+    "tags": [
+      "phase:p1",
+      "tools",
+      "planner"
+    ],
+    "relatedPageIds": [
+      "hub.tools",
+      "hub.heroes"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam store verifies three teams and hero roles, but not enough planner logic."
+      }
+    ],
+    "confidence": "low"
+  },
+  {
+    "pageId": "community",
+    "route": "/community/",
+    "pageType": "guide",
+    "cluster": "home",
+    "module": "guides",
+    "feature": "guides",
+    "priority": 46,
+    "visibility": "private",
+    "publicationStatus": "draft",
+    "contentStatus": "planned",
+    "developmentStatus": "planned",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "noindex",
+    "title": "Bomb Farm Community Sources Draft",
+    "description": "A planned Bomb Farm community sources page that will list only verified official and community destinations after source confirmation.",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm community",
+    "tags": [
+      "phase:p1",
+      "community",
+      "draft"
+    ],
+    "relatedPageIds": [
+      "home",
+      "hub.updates"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://steamcommunity.com/app/4892010",
+        "sourceType": "first-party-platform",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam Community is a verified platform surface; Discord, X, and YouTube remain unverified."
+      }
+    ],
+    "confidence": "low"
+  },
+  {
+    "pageId": "meta.tier-list",
+    "route": "/tier-list/",
+    "pageType": "meta",
+    "cluster": "meta",
+    "module": "tierLists",
+    "feature": "tierLists",
+    "priority": 35,
+    "visibility": "private",
+    "publicationStatus": "draft",
+    "contentStatus": "planned",
+    "developmentStatus": "planned",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "noindex",
+    "title": "Bomb Farm Tier List Methodology Draft",
+    "description": "A deferred Bomb Farm tier list hub that needs verified roster data, testing methodology, and patch stability before publication.",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm tier list",
+    "tags": [
+      "phase:p2",
+      "meta",
+      "deferred"
+    ],
+    "relatedPageIds": [
+      "hub.heroes"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://bombfarm.wiki/tier-list/",
+        "sourceType": "community",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Competitor coverage supports intent only; this project has no approved ranking methodology."
+      }
+    ],
+    "confidence": "low"
+  },
+  {
+    "pageId": "meta.best-heroes",
+    "route": "/tier-list/best-heroes/",
+    "pageType": "meta",
+    "cluster": "meta",
+    "module": "tierLists",
+    "feature": "tierLists",
+    "priority": 34,
+    "visibility": "private",
+    "publicationStatus": "draft",
+    "contentStatus": "planned",
+    "developmentStatus": "planned",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "noindex",
+    "title": "Bomb Farm Best Heroes Draft",
+    "description": "A deferred Bomb Farm best heroes page that requires verified hero data, repeated testing, and source-policy approval before launch.",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm best heroes",
+    "tags": [
+      "phase:p2",
+      "meta",
+      "deferred"
+    ],
+    "relatedPageIds": [
+      "meta.tier-list",
+      "hub.heroes"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://bombfarm.wiki/tier-list/",
+        "sourceType": "community",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Competitor tier content supports deferred intent only, not publishable rankings."
+      }
+    ],
+    "confidence": "low"
+  },
+  {
+    "pageId": "meta.best-squads",
+    "route": "/tier-list/best-squads/",
+    "pageType": "meta",
+    "cluster": "meta",
+    "module": "tierLists",
+    "feature": "tierLists",
+    "priority": 33,
+    "visibility": "private",
+    "publicationStatus": "draft",
+    "contentStatus": "planned",
+    "developmentStatus": "planned",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "noindex",
+    "title": "Bomb Farm Best Squads Draft",
+    "description": "A deferred Bomb Farm best squads page that needs approved planner logic, role data, and progression-bracket testing before launch.",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm best squads",
+    "tags": [
+      "phase:p2",
+      "meta",
+      "deferred"
+    ],
+    "relatedPageIds": [
+      "meta.tier-list",
+      "tool.squad-planner"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam store verifies squads and roles but not optimal squad recommendations."
+      }
+    ],
+    "confidence": "low"
+  },
+  {
+    "pageId": "meta.review",
+    "route": "/review/",
+    "pageType": "meta",
+    "cluster": "meta",
+    "module": "tierLists",
+    "feature": "tierLists",
+    "priority": 32,
+    "visibility": "private",
+    "publicationStatus": "draft",
+    "contentStatus": "planned",
+    "developmentStatus": "planned",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "noindex",
+    "title": "Bomb Farm Review Draft",
+    "description": "A deferred Bomb Farm review page that needs a fair current methodology for Steam sentiment, gameplay value, and monetization analysis.",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm review",
+    "tags": [
+      "phase:p2",
+      "meta",
+      "deferred"
+    ],
+    "relatedPageIds": [
+      "home",
+      "guide.getting-started"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://store.steampowered.com/appreviews/4892010?json=1&filter=recent&language=english&purchase_type=all&num_per_page=20",
+        "sourceType": "community",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam review sample supports review intent but not an approved final verdict."
+      }
+    ],
+    "confidence": "low"
+  },
+  {
+    "pageId": "tool.market-values",
+    "route": "/tools/market-values/",
+    "pageType": "calculator",
+    "cluster": "tools",
+    "module": "tools",
+    "feature": "calculator",
+    "priority": 31,
+    "visibility": "private",
+    "publicationStatus": "draft",
+    "contentStatus": "planned",
+    "developmentStatus": "planned",
+    "needsReview": true,
+    "needsUpdate": false,
+    "indexability": "noindex",
+    "title": "Bomb Farm Market Values Draft Tool",
+    "description": "A deferred Bomb Farm market values and economy tool that is out of V1 and must not publish price tracking or profit claims now.",
+    "updatedAt": "2026-09-04",
+    "primaryKeyword": "Bomb Farm market values",
+    "tags": [
+      "phase:p2",
+      "tools",
+      "deferred"
+    ],
+    "relatedPageIds": [
+      "guide.steam-market"
+    ],
+    "relatedEntityRefs": [],
+    "sources": [
+      {
+        "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/",
+        "sourceType": "official",
+        "accessedAt": "2026-09-04",
+        "evidenceNote": "Steam store verifies Market trading, not current values, profits, or price-tracking claims."
+      }
+    ],
+    "confidence": "low"
+  }
+]

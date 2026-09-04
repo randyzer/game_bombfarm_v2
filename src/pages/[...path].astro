@@ -1,0 +1,23 @@
+---
+import StaticWikiPage from "../components/StaticWikiPage.astro";
+import { enabledPageCatalog } from "../core/site-data";
+import {
+  buildStaticRouteRecords,
+  type StaticRouteRecord,
+} from "../core/static-routes";
+
+interface Props {
+  record: StaticRouteRecord;
+}
+
+export function getStaticPaths() {
+  return buildStaticRouteRecords(enabledPageCatalog).map((record) => ({
+    params: { path: record.path },
+    props: { record },
+  }));
+}
+
+const { record } = Astro.props;
+---
+
+<StaticWikiPage page={record.page} />

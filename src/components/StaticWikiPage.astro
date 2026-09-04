@@ -1,0 +1,113 @@
+---
+import {
+  enabledPageCatalog,
+  getRelatedPages,
+  siteConfig,
+} from "../core/site-data";
+import { getStaticWikiCopy } from "../core/p0-static-wiki-copy";
+import {
+  buildArticleSchema,
+  buildBreadcrumbSchema,
+  buildBreadcrumbTrail,
+  buildCanonicalUrl,
+} from "../core/seo";
+import type { PageInventoryEntry } from "../data/schemas/page-inventory";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import FAQ from "./wiki/FAQ.astro";
+import QuickFacts from "./wiki/QuickFacts.astro";
+import RelatedPages from "./wiki/RelatedPages.astro";
+import Sources from "./wiki/Sources.astro";
+
+interface Props {
+  page: PageInventoryEntry;
+}
+
+const { page } = Astro.props;
+const copy = getStaticWikiCopy(page.pageId);
+const relatedPages = getRelatedPages(page);
+const lastVerified = [...page.sources]
+  .sort((left, right) => right.accessedAt.localeCompare(left.accessedAt))
+  .at(0)?.accessedAt;
+const breadcrumbTrail = buildBreadcrumbTrail(
+  siteConfig,
+  page,
+  enabledPageCatalog,
+);
+const canonical = buildCanonicalUrl(siteConfig, page.route);
+const structuredData = [
+  buildBreadcrumbSchema(canonical, breadcrumbTrail),
+  buildArticleSchema(siteConfig, page),
+];
+---
+
+<BaseLayout page={page} structuredData={structuredData}>
+  <main id="main-content">
+    <article
+      class="article wiki-article shell"
+      data-pagefind-body={page.indexability === "index" ? true : undefined}
+    >
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          {breadcrumbTrail.map((item, index) => (
+            <li aria-current={index === breadcrumbTrail.length - 1 ? "page" : undefined}>
+              {index === breadcrumbTrail.length - 1 ? item.name : <a href={item.url}>{item.name}</a>}
+            </li>
+          ))}
+        </ol>
+      </nav>
+
+      <header class="article__header wiki-article__header reveal reveal--1">
+        <p class="eyebrow">{page.cluster.replaceAll("-", " ")}</p>
+        <h1 data-pagefind-meta="title">{page.title}</h1>
+        <p class="article__dek" data-pagefind-meta="description">{page.description}</p>
+        <dl class="article__meta wiki-article__meta">
+          <div>
+            <dt>Last updated</dt>
+            <dd><time datetime={page.updatedAt}>{page.updatedAt}</time></dd>
+          </div>
+          {lastVerified && (
+            <div>
+              <dt>Last verified</dt>
+              <dd><time datetime={lastVerified}>{lastVerified}</time></dd>
+            </div>
+          )}
+        </dl>
+      </header>
+
+      <QuickFacts items={copy?.quickFacts ?? []} />
+
+      <div class="article__layout wiki-article__layout wiki-article__layout--single">
+        <div class="prose">
+          {copy ? (
+            copy.sections.map((section) => (
+              <section>
+                <h2>{section.heading}</h2>
+                {section.paragraphs?.map((paragraph) => <p>{paragraph}</p>)}
+                {section.bullets && (
+                  <ul>
+                    {section.bullets.map((bullet) => <li>{bullet}</li>)}
+                  </ul>
+                )}
+              </section>
+            ))
+          ) : (
+            <section>
+              <h2>What players should know</h2>
+              <p>{page.description}</p>
+              {page.needsUpdate && (
+                <p>
+                  This topic changes quickly. Recheck the official sources below
+                  before relying on time-sensitive details.
+                </p>
+              )}
+            </section>
+          )}
+        </div>
+      </div>
+
+      <FAQ items={copy?.faq ?? []} />
+      <RelatedPages pages={relatedPages} />
+      <Sources sources={page.sources} />
+    </article>
+  </main>
+</BaseLayout>
