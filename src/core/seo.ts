@@ -8,6 +8,7 @@ export type StructuredDataNode = Record<string, unknown> & {
 
 export interface BreadcrumbItem {
   name: string;
+  href: string;
   url: string;
 }
 
@@ -38,6 +39,7 @@ export function buildBreadcrumbTrail(
   return [...ancestors, page].map((candidate) => ({
     name:
       candidate.pageType === "home" ? config.brand.name : candidate.title,
+    href: candidate.route,
     url: buildCanonicalUrl(config, candidate.route),
   }));
 }

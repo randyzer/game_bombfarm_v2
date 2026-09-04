@@ -34,7 +34,7 @@ const breadcrumbTrail = buildBreadcrumbTrail(siteConfig, page, enabledPageCatalo
       <ol>
         {breadcrumbTrail.map((item, index) => (
           <li aria-current={index === breadcrumbTrail.length - 1 ? "page" : undefined}>
-            {index === breadcrumbTrail.length - 1 ? item.name : <a href={item.url}>{item.name}</a>}
+            {index === breadcrumbTrail.length - 1 ? item.name : <a href={item.href}>{item.name}</a>}
           </li>
         ))}
       </ol>

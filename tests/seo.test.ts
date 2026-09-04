@@ -42,14 +42,17 @@ describe("technical SEO helpers", () => {
     expect(buildBreadcrumbTrail(siteConfig, guidePage, guideCatalog)).toEqual([
       {
         name: siteConfig.brand.name,
+        href: homePage.route,
         url: new URL(homePage.route, siteConfig.site.url).href,
       },
       {
         name: guideHub.title,
+        href: guideHub.route,
         url: new URL(guideHub.route, siteConfig.site.url).href,
       },
       {
         name: guidePage.title,
+        href: guidePage.route,
         url: new URL(guidePage.route, siteConfig.site.url).href,
       },
     ]);
