@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Bomb Farm hero role summary</title>
+  <desc id="desc">An original reference strip listing the four verified hero roles: Attacker, Support, Collector, and Specialist.</desc>
+  <rect width="1200" height="675" fill="#15110d"/>
+  <g stroke="#8e6d35" stroke-width="7">
+    <rect x="72" y="190" width="250" height="300" rx="6" fill="#211a13"/>
+    <rect x="341" y="190" width="250" height="300" rx="6" fill="#211a13"/>
+    <rect x="610" y="190" width="250" height="300" rx="6" fill="#211a13"/>
+    <rect x="879" y="190" width="250" height="300" rx="6" fill="#211a13"/>
+  </g>
+  <g fill="none" stroke="#58c7b3" stroke-width="12">
+    <path d="M197 265l55 55-55 55-55-55z"/>
+    <path d="M411 320h110M466 265v110"/>
+    <path d="M680 350l55-85 55 85-55 45z"/>
+    <circle cx="1004" cy="320" r="60"/>
+    <path d="M1004 260v120M944 320h120"/>
+  </g>
+  <g fill="#f4ead3" font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="104" font-size="34" font-weight="800">BUILD A BALANCED SQUAD</text>
+    <text x="197" y="448" font-size="22" font-weight="700">ATTACKER</text>
+    <text x="466" y="448" font-size="22" font-weight="700">SUPPORT</text>
+    <text x="735" y="448" font-size="22" font-weight="700">COLLECTOR</text>
+    <text x="1004" y="448" font-size="22" font-weight="700">SPECIALIST</text>
+    <text x="600" y="585" fill="#bcae94" font-size="18">Four official role labels. Exact hero assignments can change as the game evolves.</text>
+  </g>
+</svg>

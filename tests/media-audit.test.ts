@@ -9,6 +9,8 @@ const image = { id: "qa.overview", type: "image" as const, src: "/media/overview
 const video = { id: "qa.trailer", type: "video" as const, src: "aqz-KE-bpKQ", alt: "A titled test trailer", sourceUrl: "https://www.youtube.com/watch?v=aqz-KE-bpKQ" };
 const imageHtml = `<figure class="game-media" data-media-id="${image.id}"><img src="${image.src}" alt="${image.alt}" loading="lazy" decoding="async"><figcaption><a href="${image.sourceUrl}">Image source</a></figcaption></figure>`;
 const videoHtml = `<figure class="game-media game-media--video" data-media-id="${video.id}"><div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/${video.src}" title="${video.alt}" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div><figcaption><a href="${video.sourceUrl}">Video source</a></figcaption></figure>`;
+const localVideo = { ...video, id: "qa.local", src: "/media/trailer.mp4", poster: "/media/trailer.webp" };
+const localVideoHtml = `<figure class="game-media game-media--video" data-media-id="${localVideo.id}"><div class="video-embed"><video src="${localVideo.src}" poster="${localVideo.poster}" aria-label="${localVideo.alt}" controls playsinline preload="metadata"></video></div><figcaption><a href="${localVideo.sourceUrl}">Video source</a></figcaption></figure>`;
 
 async function validation() {
   const load = modules["../scripts/media-validation.ts"];
@@ -41,6 +43,12 @@ describe("generated media audit", () => {
     const { collectMediaHtmlErrors } = await validation();
     expect(collectMediaHtmlErrors("<main>Text only</main>", [], () => false)).toEqual([]);
     expect(collectMediaHtmlErrors(imageHtml + videoHtml, [image, video], () => true)).toEqual([]);
+  });
+
+  it("accepts a registered local video and rejects a missing local video file", async () => {
+    const { collectMediaHtmlErrors } = await validation();
+    expect(collectMediaHtmlErrors(localVideoHtml, [localVideo], () => true)).toEqual([]);
+    expect(collectMediaHtmlErrors(localVideoHtml, [localVideo], () => false).join(" ")).toMatch(/video.*local/i);
   });
 
   it("rejects missing output files, remote images and wrong alt", async () => {

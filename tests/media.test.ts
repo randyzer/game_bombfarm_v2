@@ -30,6 +30,13 @@ const video = {
   sourceUrl: "https://game.example/media/launch",
 };
 
+const localVideo = {
+  ...video,
+  id: "trailer.local",
+  src: "/media/trailers/launch.mp4",
+  poster: "/media/trailers/launch.webp",
+};
+
 const manifest = {
   assets: [image, video],
   pages: [
@@ -63,6 +70,11 @@ describe("media schemas", () => {
 
   it("accepts each fixed page-media slot", () => {
     expect(parseMediaManifest(manifest)).toEqual(manifest);
+  });
+
+  it("accepts a safe local MP4 with an optional local poster", () => {
+    const input = { assets: [localVideo], pages: [] };
+    expect(parseMediaManifest(input).assets).toEqual([localVideo]);
   });
 
   it("accepts dotted asset IDs and references using the page ID grammar", () => {
@@ -185,7 +197,7 @@ describe("media schemas", () => {
     expect(imageAssetSchema.safeParse(invalidAsset).success).toBe(false);
   });
 
-  it.each(["width", "height", "crop", "variants", "placements", "poster", "title"])(
+  it.each(["width", "height", "crop", "variants", "placements", "title"])(
     "rejects unsupported asset field %s",
     (field) => {
       for (const asset of [image, video]) {
@@ -313,6 +325,15 @@ describe("media catalog", () => {
     });
     expect(checked).toEqual([image.src]);
     expect(catalog.assets).toEqual([image, video]);
+  });
+
+  it("checks local video and poster files through the existing media callback", () => {
+    const checked: string[] = [];
+    createMediaCatalog({ assets: [localVideo], pages: [] }, [], (src) => {
+      checked.push(src);
+      return true;
+    });
+    expect(checked).toEqual([localVideo.src, localVideo.poster]);
   });
 
   it("rejects a local image rejected by the injected file checker", () => {

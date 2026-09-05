@@ -10,7 +10,7 @@ const assets = Astro.props.assets.map((asset) => imageAssetSchema.parse(asset));
 ---
 
 {assets.length > 0 && (
-  <div class="screenshot-gallery">
+  <div class:list={["screenshot-gallery", assets.every((asset) => asset.id.startsWith("achievement.")) && "screenshot-gallery--icons"]}>
     {assets.map((asset) => <GameMedia asset={asset} />)}
   </div>
 )}

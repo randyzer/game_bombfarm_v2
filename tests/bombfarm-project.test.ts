@@ -148,8 +148,10 @@ describe("Bomb Farm project configuration", () => {
     expect(routes.some((route) => route.includes("troubleshooting"))).toBe(false);
   });
 
-  it("keeps the media manifest empty until reuse rights are approved", () => {
-    expect(mediaManifest.assets).toEqual([]);
-    expect(mediaManifest.pages).toEqual([]);
+  it("uses the project-approved local V2.1 media manifest", () => {
+    expect(mediaManifest.assets).toHaveLength(22);
+    expect(mediaManifest.pages).toHaveLength(15);
+    expect(mediaManifest.assets.every((asset) => asset.src.startsWith("/media/"))).toBe(true);
+    expect(mediaManifest.pages.map((page) => page.pageId)).toContain("home");
   });
 });

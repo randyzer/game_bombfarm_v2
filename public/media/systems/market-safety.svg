@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Steam Market safety flow</title>
+  <desc id="desc">An original checklist diagram for reviewing the item, account, and confirmation details before using the Steam Community Market.</desc>
+  <rect width="1200" height="675" fill="#15110d"/>
+  <g fill="#211a13" stroke="#8e6d35" stroke-width="7">
+    <rect x="70" y="215" width="285" height="220" rx="6"/>
+    <rect x="458" y="215" width="285" height="220" rx="6"/>
+    <rect x="846" y="215" width="285" height="220" rx="6"/>
+  </g>
+  <g fill="none" stroke="#58c7b3" stroke-width="9">
+    <circle cx="212" cy="285" r="34"/>
+    <path d="M167 365h90M167 388h90"/>
+    <path d="M558 276h84l28 28v74H558zM642 276v32h28"/>
+    <path d="M946 326l38 38 76-82"/>
+  </g>
+  <g fill="#f4ead3" font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="108" font-size="34" font-weight="800">CHECK BEFORE YOU CONFIRM</text>
+    <text x="212" y="478" font-size="22" font-weight="700">ACCOUNT</text>
+    <text x="600" y="478" font-size="22" font-weight="700">ITEM DETAILS</text>
+    <text x="988" y="478" font-size="22" font-weight="700">FINAL TOTAL</text>
+    <text x="404" y="335" fill="#d1a84e" font-size="42">→</text>
+    <text x="792" y="335" fill="#d1a84e" font-size="42">→</text>
+    <text x="600" y="575" fill="#bcae94" font-size="18">Use the official Steam flow and verify every detail before confirming.</text>
+  </g>
+</svg>

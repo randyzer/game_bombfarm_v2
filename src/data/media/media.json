@@ -1,4 +1,234 @@
 {
-  "assets": [],
-  "pages": []
+  "assets": [
+    {
+      "id": "home.battle-overview",
+      "type": "image",
+      "src": "/media/home/battle-overview.webp",
+      "alt": "Bomb Farm battle screen with a mining squad, resource counters, grid, and navigation tabs",
+      "caption": "Battle view showing the squad, mine grid, resources, and the game's main navigation.",
+      "sourceUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4892010/907f4c81a582429b606a4e5e05d75323172e778f/ss_907f4c81a582429b606a4e5e05d75323172e778f.1920x1080.jpg"
+    },
+    {
+      "id": "home.key-art",
+      "type": "image",
+      "src": "/media/home/bomb-farm-key-art.webp",
+      "alt": "Bomb Farm key art with three pixel-art miners, bombs, crystals, and treasure",
+      "caption": "Official Bomb Farm key art from the Steam store.",
+      "sourceUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4892010/e734040683a5bc6f4cb4d323dfd0c026b64c6d95/header.jpg"
+    },
+    {
+      "id": "system.ritual-sealed-drop",
+      "type": "image",
+      "src": "/media/systems/ritual-sealed-drop.webp",
+      "alt": "Bomb Farm Ritual screen showing a sealed equipment drop ready to be revealed",
+      "caption": "The Ritual screen is where sealed equipment drops can be revealed.",
+      "sourceUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4892010/d2dc164a29f5231157aad200e628b0513a8122c0/ss_d2dc164a29f5231157aad200e628b0513a8122c0.1920x1080.jpg"
+    },
+    {
+      "id": "system.forge-equipment",
+      "type": "image",
+      "src": "/media/systems/forge-equipment.webp",
+      "alt": "Bomb Farm Forge screen with equipment inventory, item details, and the blacksmith",
+      "caption": "The Forge brings equipment, item details, and upgrade actions into one screen.",
+      "sourceUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4892010/a9a5d3c6d1fc9cf504c6fad27ab7fc770c29ac44/ss_a9a5d3c6d1fc9cf504c6fad27ab7fc770c29ac44.1920x1080.jpg"
+    },
+    {
+      "id": "system.ritual-heroes",
+      "type": "image",
+      "src": "/media/systems/ritual-heroes.webp",
+      "alt": "Bomb Farm Ritual screen displaying a revealed hero and hero capsules",
+      "caption": "A hero reveal in the Ritual interface with capsule inventory visible below.",
+      "sourceUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4892010/bfb44de1ea5d6eab9bcfd585de7d0af6c4edc6d1/ss_bfb44de1ea5d6eab9bcfd585de7d0af6c4edc6d1.1920x1080.jpg"
+    },
+    {
+      "id": "system.world-map",
+      "type": "image",
+      "src": "/media/systems/world-map.webp",
+      "alt": "Bomb Farm Map screen with a vertical cave route, completed stages, worlds, and difficulty emblems",
+      "caption": "The Map organizes the mine journey by route, world, and difficulty.",
+      "sourceUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4892010/3afbdbe7b600d6994fd384efef7e08dbad749760/ss_3afbdbe7b600d6994fd384efef7e08dbad749760.1920x1080.jpg"
+    },
+    {
+      "id": "hero.house-capsules",
+      "type": "image",
+      "src": "/media/heroes/house-capsules.webp",
+      "alt": "Bomb Farm House screen showing the active squad, hero capsules, and team controls",
+      "caption": "The House view shows the active squad and the hero collection interface.",
+      "sourceUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4892010/c7706d1da92172b7d1f5510dbaece0dfb04e16c3/ss_c7706d1da92172b7d1f5510dbaece0dfb04e16c3.1920x1080.jpg"
+    },
+    {
+      "id": "diagram.skill-tree",
+      "type": "image",
+      "src": "/media/systems/skill-tree-overview.svg",
+      "alt": "Original diagram of the shared Bomb Farm skill tree branching toward 20 upgradeable abilities",
+      "caption": "Original wiki diagram based on the official 20-ability, level 1-to-10 description; it is not an in-game UI capture.",
+      "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/"
+    },
+    {
+      "id": "diagram.market-safety",
+      "type": "image",
+      "src": "/media/systems/market-safety.svg",
+      "alt": "Original Steam Market safety diagram showing account, item-detail, and final-total checks",
+      "caption": "Original wiki checklist for the official Steam flow; it is not an in-game UI capture.",
+      "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/"
+    },
+    {
+      "id": "diagram.hero-roles",
+      "type": "image",
+      "src": "/media/heroes/role-summary.svg",
+      "alt": "Original Bomb Farm role strip listing Attacker, Support, Collector, and Specialist",
+      "caption": "Original wiki diagram of the four role labels confirmed by the official game description.",
+      "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/"
+    },
+    {
+      "id": "diagram.energy-rotation",
+      "type": "image",
+      "src": "/media/heroes/energy-rotation.svg",
+      "alt": "Original diagram showing three Bomb Farm teams rotating between mining and recovery",
+      "caption": "Original wiki diagram based on the official three-team rotation description.",
+      "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/"
+    },
+    {
+      "id": "video.official-trailer",
+      "type": "video",
+      "src": "/media/video/official-trailer.mp4",
+      "poster": "/media/video/official-trailer-poster.webp",
+      "alt": "Official Bomb Farm trailer showing battle, mining, heroes, gear, and progression screens",
+      "caption": "Official Bomb Farm trailer from the Steam store.",
+      "sourceUrl": "https://store.steampowered.com/app/4892010/Bomb_Farm/"
+    },
+    {
+      "id": "achievement.beat-the-clock",
+      "type": "image",
+      "src": "/media/icons/achievements/beat-the-clock.webp",
+      "alt": "Beat the Clock achievement icon",
+      "caption": "Beat the Clock",
+      "sourceUrl": "https://steamcommunity.com/stats/4892010/achievements"
+    },
+    {
+      "id": "achievement.easy-cleared",
+      "type": "image",
+      "src": "/media/icons/achievements/easy-cleared.webp",
+      "alt": "Easy Cleared achievement icon",
+      "caption": "Easy Cleared",
+      "sourceUrl": "https://steamcommunity.com/stats/4892010/achievements"
+    },
+    {
+      "id": "achievement.normal-cleared",
+      "type": "image",
+      "src": "/media/icons/achievements/normal-cleared.webp",
+      "alt": "Normal Cleared achievement icon",
+      "caption": "Normal Cleared",
+      "sourceUrl": "https://steamcommunity.com/stats/4892010/achievements"
+    },
+    {
+      "id": "achievement.hard-cleared",
+      "type": "image",
+      "src": "/media/icons/achievements/hard-cleared.webp",
+      "alt": "Hard Cleared achievement icon",
+      "caption": "Hard Cleared",
+      "sourceUrl": "https://steamcommunity.com/stats/4892010/achievements"
+    },
+    {
+      "id": "achievement.very-hard-cleared",
+      "type": "image",
+      "src": "/media/icons/achievements/very-hard-cleared.webp",
+      "alt": "Very Hard Cleared achievement icon",
+      "caption": "Very Hard Cleared",
+      "sourceUrl": "https://steamcommunity.com/stats/4892010/achievements"
+    },
+    {
+      "id": "achievement.inferno-cleared",
+      "type": "image",
+      "src": "/media/icons/achievements/inferno-cleared.webp",
+      "alt": "Inferno Cleared achievement icon",
+      "caption": "Inferno Cleared",
+      "sourceUrl": "https://steamcommunity.com/stats/4892010/achievements"
+    },
+    {
+      "id": "achievement.living-legend",
+      "type": "image",
+      "src": "/media/icons/achievements/living-legend.webp",
+      "alt": "Living Legend achievement icon",
+      "caption": "Living Legend",
+      "sourceUrl": "https://steamcommunity.com/stats/4892010/achievements"
+    },
+    {
+      "id": "achievement.myth",
+      "type": "image",
+      "src": "/media/icons/achievements/myth.webp",
+      "alt": "Myth achievement icon",
+      "caption": "Myth",
+      "sourceUrl": "https://steamcommunity.com/stats/4892010/achievements"
+    },
+    {
+      "id": "achievement.ceiling",
+      "type": "image",
+      "src": "/media/icons/achievements/ceiling.webp",
+      "alt": "Ceiling achievement icon",
+      "caption": "Ceiling",
+      "sourceUrl": "https://steamcommunity.com/stats/4892010/achievements"
+    },
+    {
+      "id": "achievement.full-ritual",
+      "type": "image",
+      "src": "/media/icons/achievements/full-ritual.webp",
+      "alt": "Full Ritual achievement icon",
+      "caption": "Full Ritual",
+      "sourceUrl": "https://steamcommunity.com/stats/4892010/achievements"
+    }
+  ],
+  "pages": [
+    {
+      "pageId": "home",
+      "hero": "home.battle-overview",
+      "gallery": ["system.world-map", "system.forge-equipment", "hero.house-capsules"],
+      "trailer": "video.official-trailer"
+    },
+    { "pageId": "hub.guides", "hero": "home.battle-overview" },
+    {
+      "pageId": "guide.getting-started",
+      "hero": "home.battle-overview",
+      "gallery": ["system.world-map", "hero.house-capsules"]
+    },
+    {
+      "pageId": "guide.how-to-play",
+      "hero": "home.battle-overview",
+      "gallery": ["system.ritual-sealed-drop", "system.forge-equipment"],
+      "trailer": "video.official-trailer"
+    },
+    { "pageId": "guide.controls", "hero": "home.battle-overview" },
+    {
+      "pageId": "guide.progression",
+      "hero": "system.world-map",
+      "gallery": ["home.battle-overview"]
+    },
+    {
+      "pageId": "guide.gear-and-ritual",
+      "hero": "system.ritual-sealed-drop",
+      "gallery": ["system.forge-equipment", "system.ritual-heroes"]
+    },
+    { "pageId": "guide.skill-tree", "hero": "diagram.skill-tree" },
+    { "pageId": "guide.steam-market", "hero": "diagram.market-safety", "gallery": ["system.forge-equipment"] },
+    { "pageId": "hub.heroes", "hero": "hero.house-capsules", "gallery": ["system.ritual-heroes"] },
+    { "pageId": "guide.hero-roles", "hero": "diagram.hero-roles", "gallery": ["hero.house-capsules"] },
+    { "pageId": "guide.energy-rotation", "hero": "diagram.energy-rotation", "gallery": ["hero.house-capsules"] },
+    { "pageId": "hub.updates", "hero": "home.key-art" },
+    { "pageId": "patch.latest-update", "hero": "home.key-art" },
+    {
+      "pageId": "guide.achievements",
+      "gallery": [
+        "achievement.beat-the-clock",
+        "achievement.easy-cleared",
+        "achievement.normal-cleared",
+        "achievement.hard-cleared",
+        "achievement.very-hard-cleared",
+        "achievement.inferno-cleared",
+        "achievement.living-legend",
+        "achievement.myth",
+        "achievement.ceiling",
+        "achievement.full-ritual"
+      ]
+    }
+  ]
 }

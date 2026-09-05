@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Three-team energy rotation</title>
+  <desc id="desc">An original diagram showing three Bomb Farm teams rotating between mining and recovery.</desc>
+  <rect width="1200" height="675" fill="#15110d"/>
+  <circle cx="600" cy="338" r="230" fill="none" stroke="#5c4728" stroke-width="18" stroke-dasharray="20 12"/>
+  <path d="M600 74l34 54h-68zM852 430l-62 2 31-54zM348 430l31-54 31 54z" fill="#d1a84e"/>
+  <g fill="#211a13" stroke="#a98543" stroke-width="8">
+    <rect x="465" y="250" width="270" height="176" rx="6"/>
+    <rect x="470" y="35" width="260" height="104" rx="6"/>
+    <rect x="790" y="430" width="260" height="104" rx="6"/>
+    <rect x="150" y="430" width="260" height="104" rx="6"/>
+  </g>
+  <g fill="#f4ead3" font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="312" fill="#58c7b3" font-size="22" font-weight="700">KEEP THE MINE RUNNING</text>
+    <text x="600" y="354" font-size="40" font-weight="800">ROTATE TEAMS</text>
+    <text x="600" y="392" fill="#bcae94" font-size="18">Move a ready squad in while another recovers</text>
+    <text x="600" y="79" font-size="22" font-weight="700">TEAM 1</text>
+    <text x="600" y="112" fill="#bcae94" font-size="17">Mine</text>
+    <text x="920" y="474" font-size="22" font-weight="700">TEAM 2</text>
+    <text x="920" y="507" fill="#bcae94" font-size="17">Recover</text>
+    <text x="280" y="474" font-size="22" font-weight="700">TEAM 3</text>
+    <text x="280" y="507" fill="#bcae94" font-size="17">Prepare</text>
+  </g>
+</svg>

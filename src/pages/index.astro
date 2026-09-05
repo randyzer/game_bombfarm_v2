@@ -6,7 +6,6 @@ import { buildHomepageModel } from "../components/home/home-model";
 import GameMedia from "../components/media/GameMedia.astro";
 import ScreenshotGallery from "../components/media/ScreenshotGallery.astro";
 import FAQ from "../components/wiki/FAQ.astro";
-import QuickFacts from "../components/wiki/QuickFacts.astro";
 import RelatedPages from "../components/wiki/RelatedPages.astro";
 import Sources from "../components/wiki/Sources.astro";
 import {
@@ -31,6 +30,7 @@ const homepage = buildHomepageModel({
 });
 const hasHomepageMedia =
   homepage.media.galleryMedia.length > 0 || Boolean(homepage.media.trailerMedia);
+const steamStoreUrl = "https://store.steampowered.com/app/4892010/Bomb_Farm/";
 ---
 
 <BaseLayout page={page}>
@@ -45,38 +45,48 @@ const hasHomepageMedia =
       startPage={homepage.heroStartPage}
       heroMedia={homepage.media.heroMedia}
       browseTarget={homepage.categories.length > 0 ? "#browse-by-category" : undefined}
+      steamUrl={steamStoreUrl}
+      quickFacts={homepage.quickFacts}
     />
 
-    {homepage.quickFacts.length > 0 && (
-      <div class="shell">
-        <QuickFacts
-          items={homepage.quickFacts}
-          title={`${siteConfig.brand.name} at a glance`}
-        />
-      </div>
-    )}
+    <WikiCategories pages={homepage.categories} />
 
-    {homepage.startHere.length > 0 && (
+    {hasHomepageMedia && (
       <section
-        id="start-here"
-        class="portal-start shell"
-        aria-labelledby="start-here-title"
+        id="home-media"
+        class="portal-section home-media shell"
+        aria-labelledby="home-media-title"
       >
-        <div>
-          <p class="eyebrow">New to the game?</p>
-          <h2 id="start-here-title">Start here</h2>
+        <header class="portal-section__header">
+          <p class="eyebrow">Mine, build, rotate</p>
+          <div>
+            <h2 id="home-media-title">How the game fits together</h2>
+            <p class="portal-section__intro">
+              Follow the mine route, turn drops into stronger gear, and rotate
+              squads so progression keeps moving.
+            </p>
+          </div>
+        </header>
+        <div class="home-media__content">
+          {homepage.media.galleryMedia.length > 0 && (
+            <div data-media-placement="gallery">
+              <ScreenshotGallery assets={homepage.media.galleryMedia} />
+            </div>
+          )}
+          {homepage.media.trailerMedia && (
+            <div class="home-trailer">
+              <div class="home-trailer__heading">
+                <p class="eyebrow">Official trailer</p>
+                <h3>See the mine in motion</h3>
+              </div>
+              <div data-media-placement="trailer">
+                <GameMedia asset={homepage.media.trailerMedia} />
+              </div>
+            </div>
+          )}
         </div>
-        <a class="portal-start__link" href={homepage.startHere[0].route}>
-          <span>
-            <small>Recommended first step</small>
-            <strong>{homepage.startHere[0].title}</strong>
-          </span>
-          <span aria-hidden="true">→</span>
-        </a>
       </section>
     )}
-
-    <WikiCategories pages={homepage.categories} />
 
     <PageCollection
       id="featured-guides"
@@ -99,31 +109,6 @@ const hasHomepageMedia =
       pages={homepage.latestUpdates}
       showUpdatedAt
     />
-
-    {hasHomepageMedia && (
-      <section
-        id="home-media"
-        class="portal-section home-media shell"
-        aria-labelledby="home-media-title"
-      >
-        <header class="portal-section__header">
-          <p class="eyebrow">In game</p>
-          <h2 id="home-media-title">Screenshots and trailer</h2>
-        </header>
-        <div class="home-media__content">
-          {homepage.media.galleryMedia.length > 0 && (
-            <div data-media-placement="gallery">
-              <ScreenshotGallery assets={homepage.media.galleryMedia} />
-            </div>
-          )}
-          {homepage.media.trailerMedia && (
-            <div data-media-placement="trailer">
-              <GameMedia asset={homepage.media.trailerMedia} />
-            </div>
-          )}
-        </div>
-      </section>
-    )}
 
     {homepage.faq.length > 0 && (
       <div class="shell">

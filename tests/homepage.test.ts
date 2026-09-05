@@ -326,6 +326,55 @@ describe("homepage presentation", () => {
     expect(html).not.toMatch(/Published nodes|Active systems|Source policy|Operating doctrine/i);
   });
 
+  it("places the homepage identity before media on narrow screens", async () => {
+    const startPage = fixturePage({
+      pageId: "guide.start",
+      route: "/guides/start/",
+    });
+    const heroMedia = {
+      id: "home.hero",
+      type: "image" as const,
+      src: "/media/home-hero.svg",
+      alt: "A player crossing the opening area",
+      sourceUrl: "https://example.com/home-hero",
+    };
+    const html = await renderComponent(
+      homeComponents,
+      "../src/components/home/GameHero.astro",
+      {
+        page: homePage,
+        brand: siteConfig.brand,
+        startPage,
+        heroMedia,
+        quickFacts: [{ label: "Platform", value: "Steam" }],
+      },
+    );
+    const styles = source(globalStylesUrl);
+
+    expect(html).toContain('class="game-hero__identity"');
+    expect(styles).toMatch(
+      /@media\s*\(max-width:\s*900px\)[\s\S]*?\.game-hero--has-media \.game-hero__copy\s*\{[^}]*display:\s*contents;/,
+    );
+    expect(styles).toMatch(/\.game-hero__identity\s*\{[^}]*order:\s*1;/);
+    expect(styles).toMatch(/\.game-hero__media\s*\{[^}]*order:\s*2;/);
+    expect(styles).toMatch(/\.game-hero__copy\s*>\s*\.hero__actions\s*\{[^}]*order:\s*3;/);
+    expect(styles).toMatch(/\.game-hero__facts\s*\{[^}]*order:\s*4;/);
+  });
+
+  it("keeps hub and article headers compact enough for first-screen content", () => {
+    const styles = source(globalStylesUrl);
+
+    expect(styles).toMatch(
+      /\.article__header\s*\{[^}]*padding-block:\s*clamp\(38px,\s*4\.5vw,\s*64px\)\s*34px;/,
+    );
+    expect(styles).toMatch(
+      /\.article__header h1\s*\{[^}]*font-size:\s*clamp\(2\.65rem,\s*5vw,\s*4\.65rem\);/,
+    );
+    expect(styles).toMatch(
+      /\.hub-page__header\s*\{[^}]*padding-block:\s*clamp\(38px,\s*4\.5vw,\s*64px\)\s*34px;/,
+    );
+  });
+
   it("omits empty actions and a dead category anchor for a minimal homepage", async () => {
     const html = await renderComponent(
       homeComponents,
@@ -380,13 +429,11 @@ describe("homepage presentation", () => {
     const index = source(indexUrl);
     const orderedMarkers = [
       "<GameHero",
-      "<QuickFacts",
-      'id="start-here"',
       "<WikiCategories",
+      'id="home-media"',
       'title="Featured guides"',
       'title="Important systems"',
       'title="Latest updates"',
-      'id="home-media"',
       "<FAQ",
       'title="Browse all"',
     ];
@@ -408,7 +455,7 @@ describe("homepage presentation", () => {
   it("labels Start Here from the resolved featured page instead of a fixed guide name", () => {
     const index = source(indexUrl);
 
-    expect(index).toContain("{homepage.startHere[0].title}");
+    expect(index).toContain("startPage={homepage.heroStartPage}");
     expect(index).not.toContain("Open the getting-started guide");
   });
 
@@ -436,7 +483,7 @@ describe("homepage presentation", () => {
     );
   });
 
-  it("uses only the existing Phase B media placements and hides an empty home mapping", async () => {
+  it("renders the approved manifest-backed homepage media placements", async () => {
     const container = await AstroContainer.create();
     const html = await container.renderToString(HomePage);
     const main = html.match(/<main\b[\s\S]*?<\/main>/)?.[0] ?? "";
@@ -445,8 +492,12 @@ describe("homepage presentation", () => {
     expect(index).toContain('data-media-placement="gallery"');
     expect(index).toContain('data-media-placement="trailer"');
     expect(index).not.toMatch(/homepageMedia|remoteImage|mediaSlot|placementName/);
-    expect(main).not.toContain('id="home-media"');
-    expect(main).not.toMatch(/data-media-placement|<img\b|<iframe\b/);
+    expect(main).toContain('id="home-media"');
+    for (const placement of ["hero", "gallery", "trailer"]) {
+      expect(main).toContain(`data-media-placement="${placement}"`);
+    }
+    expect(main).toMatch(/<img\b/);
+    expect(main).toMatch(/<video\b/);
   });
 
   it("keeps FAQ optional in content and outside Page Inventory", () => {

@@ -4,7 +4,7 @@ import { join, resolve, sep } from "node:path";
 import type { ResolvedPageMedia } from "../src/data/media/catalog";
 import type { MediaAsset } from "../src/data/schemas/media";
 
-export function isLocalImageFile(src: string, publicDirectory: string): boolean {
+export function isLocalMediaFile(src: string, publicDirectory: string): boolean {
   if (!src.startsWith("/media/")) return false;
   try {
     const root = join(realpathSync(publicDirectory), "media");
@@ -16,6 +16,8 @@ export function isLocalImageFile(src: string, publicDirectory: string): boolean 
   }
 }
 
+export const isLocalImageFile = isLocalMediaFile;
+
 function attributes(tag: string): Map<string, string> {
   const entities: Record<string, string> = { amp: "&", quot: '"', "#39": "'", "#x27": "'", lt: "<", gt: ">" };
   return new Map([...tag.matchAll(/([\w-]+)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'))?/g)].map((match) => [
@@ -24,7 +26,7 @@ function attributes(tag: string): Map<string, string> {
   ]));
 }
 
-function openingTags(html: string, name: "img" | "iframe" | "a"): string[] {
+function openingTags(html: string, name: "img" | "iframe" | "video" | "a"): string[] {
   // Astro preserves > inside quoted attributes; it is not a tag boundary there.
   return html.match(new RegExp(`<${name}\\b(?:[^"'<>]|"[^"]*"|'[^']*')*>`, "g")) ?? [];
 }
@@ -37,7 +39,17 @@ export function collectMediaHtmlErrors(
 ): string[] {
   const errors: string[] = [];
   const byId = new Map(assets.map((asset) => [asset.id, asset]));
-  const videoSources = new Set(assets.filter((asset) => asset.type === "video").map((asset) => `https://www.youtube-nocookie.com/embed/${asset.src}`));
+  const videoAssets = assets.filter((asset) => asset.type === "video");
+  const youtubeSources = new Set(
+    videoAssets
+      .filter((asset) => !asset.src.startsWith("/media/"))
+      .map((asset) => `https://www.youtube-nocookie.com/embed/${asset.src}`),
+  );
+  const localVideoSources = new Set(
+    videoAssets
+      .filter((asset) => asset.src.startsWith("/media/"))
+      .map((asset) => asset.src),
+  );
 
   for (const tag of openingTags(html, "img")) {
     const src = attributes(tag).get("src") ?? "";
@@ -45,11 +57,20 @@ export function collectMediaHtmlErrors(
   }
   for (const tag of openingTags(html, "iframe")) {
     const attrs = attributes(tag);
-    if (!videoSources.has(attrs.get("src") ?? "")) errors.push("Iframe src is not a registered YouTube-nocookie embed.");
+    if (!youtubeSources.has(attrs.get("src") ?? "")) errors.push("Iframe src is not a registered YouTube-nocookie embed.");
     if (!attrs.get("title")?.trim()) errors.push("Iframe requires an accessible title.");
     if (attrs.get("loading") !== "lazy") errors.push("Iframe must load lazily.");
     if (attrs.get("allow") !== "encrypted-media; picture-in-picture; fullscreen" || !attrs.has("allowfullscreen")) errors.push("Iframe permissions/fullscreen contract is invalid.");
     if (attrs.get("referrerpolicy") !== "strict-origin-when-cross-origin" || attrs.has("srcdoc")) errors.push("Iframe privacy contract is invalid.");
+  }
+  for (const tag of openingTags(html, "video")) {
+    const attrs = attributes(tag);
+    const src = attrs.get("src") ?? "";
+    if (!localVideoSources.has(src) || !localFileExists(src)) errors.push(`Video src is not an existing registered local media file: ${src}`);
+    if (!attrs.get("aria-label")?.trim()) errors.push("Local video requires an accessible label.");
+    if (!attrs.has("controls") || !attrs.has("playsinline") || attrs.get("preload") !== "metadata") errors.push("Local video playback contract is invalid.");
+    const poster = attrs.get("poster");
+    if (poster && !localFileExists(poster)) errors.push(`Video poster is not an existing local media file: ${poster}`);
   }
 
   for (const match of html.matchAll(/<figure\b([^>]*)>([\s\S]*?)<\/figure>/g)) {
@@ -72,9 +93,16 @@ export function collectMediaHtmlErrors(
       if (!attrs.has("alt") || attrs.get("alt") !== asset.alt) errors.push(`Media ${id} alt does not match its asset.`);
       if (!["eager", "lazy"].includes(attrs.get("loading") ?? "") || attrs.get("decoding") !== "async") errors.push(`Media ${id} image loading contract is invalid.`);
     } else {
-      const iframes = openingTags(body, "iframe");
-      const attrs = attributes(iframes[0] ?? "");
-      if (iframes.length !== 1 || attrs.get("src") !== `https://www.youtube-nocookie.com/embed/${asset.src}` || attrs.get("title") !== asset.alt) errors.push(`Media ${id} video src/title does not match its asset.`);
+      if (asset.src.startsWith("/media/")) {
+        const videos = openingTags(body, "video");
+        const attrs = attributes(videos[0] ?? "");
+        if (videos.length !== 1 || attrs.get("src") !== asset.src || attrs.get("aria-label") !== asset.alt) errors.push(`Media ${id} local video src/label does not match its asset.`);
+        if ((asset.poster ?? "") !== (attrs.get("poster") ?? "")) errors.push(`Media ${id} local video poster does not match its asset.`);
+      } else {
+        const iframes = openingTags(body, "iframe");
+        const attrs = attributes(iframes[0] ?? "");
+        if (iframes.length !== 1 || attrs.get("src") !== `https://www.youtube-nocookie.com/embed/${asset.src}` || attrs.get("title") !== asset.alt) errors.push(`Media ${id} video src/title does not match its asset.`);
+      }
       if (!/<div\b[^>]*class="video-embed"/.test(body)) errors.push(`Media ${id} lacks its responsive video wrapper.`);
     }
   }

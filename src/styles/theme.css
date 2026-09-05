@@ -3,23 +3,23 @@
  * Dark mine surfaces with mineral gold, warning red, and cyan utility accents.
  */
 :root {
-  --color-background: #121413;
-  --color-surface: #20241f;
-  --color-text: #f1ead7;
-  --color-text-muted: #b9b19c;
-  --color-primary: #d7a53c;
-  --color-accent: #e85d35;
-  --color-accent-strong: #ffcb52;
-  --color-guides: #ffcb52;
-  --color-heroes: #58c7b3;
-  --color-weapons: #e85d35;
-  --color-items: #a6d46f;
-  --color-maps: #8fb7ff;
-  --color-updates: #f2a15f;
-  --color-meta: #d9d2be;
-  --color-tools: #58c7b3;
-  --color-border: color-mix(in srgb, var(--color-text) 24%, transparent);
-  --color-border-strong: color-mix(in srgb, var(--color-text) 72%, transparent);
-  --color-on-primary: #171814;
-  --color-on-accent: #171814;
+  --color-background: #100d0a;
+  --color-surface: #211a13;
+  --color-text: #f4ead3;
+  --color-text-muted: #bcae94;
+  --color-primary: #c89a48;
+  --color-accent: #c96f3f;
+  --color-accent-strong: #e1b957;
+  --color-guides: #d3a64c;
+  --color-heroes: #58bbae;
+  --color-weapons: #bd6540;
+  --color-items: #b79d5d;
+  --color-maps: #71afa8;
+  --color-updates: #d18349;
+  --color-meta: #c2b398;
+  --color-tools: #68aaa2;
+  --color-border: color-mix(in srgb, var(--color-primary) 27%, transparent);
+  --color-border-strong: color-mix(in srgb, var(--color-primary) 64%, transparent);
+  --color-on-primary: #15110d;
+  --color-on-accent: #15110d;
 }

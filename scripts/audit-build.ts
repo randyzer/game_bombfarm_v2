@@ -17,7 +17,7 @@ import {
 import { enabledPageCatalog, siteConfig } from "../src/core/site-data";
 import { entityTypeKeys } from "../src/data/entity-modules";
 import { mediaCatalog } from "../src/data/media/catalog";
-import { collectMediaHtmlErrors, isLocalImageFile } from "./media-validation";
+import { collectMediaHtmlErrors, isLocalMediaFile } from "./media-validation";
 
 const outputDirectory = resolve(process.cwd(), "dist");
 const auditPageCatalog = [...enabledPageCatalog, ...fixedPageCatalog];
@@ -59,11 +59,17 @@ let largestReferencedJsBytes = 0;
 
 for (const page of auditPageCatalog) {
   const html = htmlByRoute.get(page.route)!;
-  const mediaPageTypes = new Set<string>(["guide", ...entityTypeKeys]);
+  const mediaPageTypes = new Set<string>([
+    "home",
+    "hub",
+    "guide",
+    "patch",
+    ...entityTypeKeys,
+  ]);
   errors.push(...collectMediaHtmlErrors(
     html,
     mediaCatalog.assets,
-    (src) => isLocalImageFile(src, outputDirectory),
+    (src) => isLocalMediaFile(src, outputDirectory),
     mediaPageTypes.has(page.pageType) ? mediaCatalog.getPageMedia(page.pageId) : undefined,
   ).map((error) => `[${page.route}] ${error}`));
   const htmlBytes = Buffer.byteLength(html);

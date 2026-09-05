@@ -27,15 +27,17 @@ const titleId = `${id}-title`;
       <p class="eyebrow">{eyebrow}</p>
       <h2 id={titleId}>{title}</h2>
     </header>
-    <div class="portal-grid">
+    <div class="portal-list">
       {pages.map((page) => (
-        <a class="portal-card" href={page.route}>
+        <a class="portal-row" href={page.route}>
           {showUpdatedAt && (
             <time datetime={page.updatedAt}>Updated {page.updatedAt}</time>
           )}
-          <h3>{page.title}</h3>
-          {showDescriptions && <p>{page.description}</p>}
-          <span class="portal-card__action">Read more <span aria-hidden="true">→</span></span>
+          <span class="portal-row__body">
+            <h3>{page.title}</h3>
+            {showDescriptions && <p>{page.description}</p>}
+          </span>
+          <span class="portal-row__action">Open <span aria-hidden="true">›</span></span>
         </a>
       ))}
     </div>

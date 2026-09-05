@@ -27,6 +27,14 @@ export function createMediaCatalog(
     if (asset.type === "image" && localFileExists && !localFileExists(asset.src)) {
       throw new Error(`Local image file does not exist: ${asset.src}`);
     }
+    if (asset.type === "video" && asset.src.startsWith("/media/") && localFileExists) {
+      if (!localFileExists(asset.src)) {
+        throw new Error(`Local video file does not exist: ${asset.src}`);
+      }
+      if (asset.poster && !localFileExists(asset.poster)) {
+        throw new Error(`Local video poster does not exist: ${asset.poster}`);
+      }
+    }
   }
 
   function getAsset(id: string): MediaAsset {

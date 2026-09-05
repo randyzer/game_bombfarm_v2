@@ -26,8 +26,14 @@ const video = {
   sourceUrl: "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
 };
 const page = pageInventory.find(
-  (entry) => entry.pageId === "guide.getting-started",
+  (entry) => entry.pageId === "guide.codes",
 )!;
+const localVideo = {
+  ...video,
+  id: "qa.local-trailer",
+  src: "/media/qa-trailer.mp4",
+  poster: "/media/qa-poster.webp",
+};
 
 async function renderMedia(name: string, props: Record<string, unknown>) {
   const load = components[`../src/components/media/${name}.astro`];
@@ -42,7 +48,7 @@ describe("rendered media primitives", () => {
     const css = readFileSync(new URL("../src/styles/global.css", import.meta.url), "utf8");
     expect(css).toMatch(/\.game-media img\s*\{[^}]*width:\s*100%;[^}]*height:\s*auto;/);
     expect(css).toMatch(/\.video-embed\s*\{[^}]*aspect-ratio:\s*16\s*\/\s*9;/);
-    expect(css).toMatch(/\.video-embed iframe\s*\{[^}]*width:\s*100%;[^}]*height:\s*100%;/);
+    expect(css).toMatch(/\.video-embed iframe,[\s\S]*?\.video-embed video\s*\{[^}]*width:\s*100%;[^}]*height:\s*100%;/);
     expect(css).toMatch(/\.screenshot-gallery\s*\{[^}]*grid-template-columns:\s*repeat\(auto-fit,\s*minmax\(min\(100%,/);
   });
   it("renders a local image with explicit alt, provenance and caption", async () => {
@@ -88,6 +94,18 @@ describe("rendered media primitives", () => {
 
   it("dispatches video assets through GameMedia", async () => {
     expect(await renderMedia("GameMedia", { asset: video })).toContain("youtube-nocookie.com/embed/");
+  });
+
+  it("renders a registered local trailer with controls, poster and metadata preload", async () => {
+    const html = await renderMedia("VideoEmbed", { asset: localVideo });
+    expect(html).toContain(`src="${localVideo.src}"`);
+    expect(html).toContain(`poster="${localVideo.poster}"`);
+    expect(html).toContain(`aria-label="${localVideo.alt}"`);
+    expect(html).toMatch(/\bcontrols(?:="")?/);
+    expect(html).toMatch(/\bplaysinline(?:="")?/);
+    expect(html).toContain('preload="metadata"');
+    expect(html).not.toContain("youtube-nocookie.com");
+    expect(collectMediaHtmlErrors(html, [localVideo], () => true)).toEqual([]);
   });
 
   it.each([image, video])("audits real $type output with punctuation in accessible text", async (asset) => {

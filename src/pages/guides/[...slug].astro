@@ -2,6 +2,7 @@
 import { getCollection, render, type CollectionEntry } from "astro:content";
 
 import WikiArticle from "../../components/wiki/WikiArticle.astro";
+import GameMedia from "../../components/media/GameMedia.astro";
 import RelatedPages from "../../components/wiki/RelatedPages.astro";
 import Sources from "../../components/wiki/Sources.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
@@ -21,6 +22,7 @@ import {
   type GuideRouteRecord,
 } from "../../core/optional-routes";
 import { resolveContentPages } from "../../core/page-resolution";
+import { mediaCatalog } from "../../data/media/catalog";
 
 interface Props {
   record: GuideRouteRecord<CollectionEntry<"guides">>;
@@ -47,6 +49,7 @@ const breadcrumbTrail = buildBreadcrumbTrail(
 const canonical = buildCanonicalUrl(siteConfig, page.route);
 const rendered = record.view === "article" ? await render(record.content) : undefined;
 const Content = rendered?.Content;
+const pageMedia = mediaCatalog.getPageMedia(page.pageId);
 ---
 
 {record.view === "hub" ? (
@@ -74,6 +77,12 @@ const Content = rendered?.Content;
         </div>
         <p data-pagefind-meta="description">{page.description}</p>
       </header>
+
+      {pageMedia.heroMedia && (
+        <div class="hub-page__media" data-media-placement="hero">
+          <GameMedia asset={pageMedia.heroMedia} eager />
+        </div>
+      )}
 
       <div class="hub-page__legend" aria-label="Guide index legend">
         <span>No.</span>

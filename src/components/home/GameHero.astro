@@ -10,24 +10,42 @@ interface Props {
   startPage?: PageInventoryEntry;
   heroMedia?: ImageAsset;
   browseTarget?: string;
+  steamUrl?: string;
+  quickFacts?: Array<{ label: string; value: string }>;
 }
 
-const { page, brand, startPage, heroMedia, browseTarget } = Astro.props;
+const {
+  page,
+  brand,
+  startPage,
+  heroMedia,
+  browseTarget,
+  steamUrl,
+  quickFacts = [],
+} = Astro.props;
 ---
 
-<section class="game-hero shell" aria-labelledby="game-hero-title">
+<section
+  class:list={["game-hero shell", heroMedia && "game-hero--has-media"]}
+  aria-labelledby="game-hero-title"
+>
   <div class="game-hero__copy reveal reveal--1">
-    <p class="eyebrow">{brand.name} player wiki</p>
-    <h1 id="game-hero-title" data-pagefind-meta="title">
-      Find your route.<br /><em>Play with a plan.</em>
-    </h1>
-    <p class="game-hero__lede" data-pagefind-meta="description">{page.description}</p>
-    <p class="game-hero__tagline">{brand.tagline}</p>
-    {(startPage || browseTarget) && (
+    <div class="game-hero__identity">
+      <p class="eyebrow">Player guides for every mine run</p>
+      <h1 id="game-hero-title" data-pagefind-meta="title">Bomb Farm <em>Wiki</em></h1>
+      <p class="game-hero__lede" data-pagefind-meta="description">{page.description}</p>
+      <p class="game-hero__tagline">{brand.tagline}</p>
+    </div>
+    {(startPage || steamUrl || browseTarget) && (
       <div class="hero__actions">
         {startPage && (
           <a class="button button--primary" href={startPage.route}>
-            Start here <span aria-hidden="true">→</span>
+            Start here <span aria-hidden="true">›</span>
+          </a>
+        )}
+        {steamUrl && (
+          <a class="button button--steam" href={steamUrl} rel="noreferrer">
+            Play on Steam <span aria-hidden="true">↗</span>
           </a>
         )}
         {browseTarget && (
@@ -37,10 +55,20 @@ const { page, brand, startPage, heroMedia, browseTarget } = Astro.props;
         )}
       </div>
     )}
+    {quickFacts.length > 0 && (
+      <dl class="game-hero__facts" aria-label="Bomb Farm quick facts">
+        {quickFacts.map((fact) => (
+          <div>
+            <dt>{fact.label}</dt>
+            <dd>{fact.value}</dd>
+          </div>
+        ))}
+      </dl>
+    )}
   </div>
 
   {heroMedia && (
-    <div class="game-hero__media reveal reveal--2" data-media-placement="hero">
+    <div class="game-hero__media" data-media-placement="hero">
       <GameMedia asset={heroMedia} eager />
     </div>
   )}

@@ -1,7 +1,6 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import { buildBrandPresentation } from "../core/brand";
 import { siteConfig } from "../core/site-data";
 import {
   buildBaseSeoGraph,
@@ -18,7 +17,6 @@ interface Props {
 }
 
 const { page, structuredData } = Astro.props;
-const brandPresentation = buildBrandPresentation(siteConfig);
 const canonical = buildCanonicalUrl(siteConfig, page.route);
 const robots =
   page.indexability === "index"
@@ -70,10 +68,6 @@ const graph = [
   </head>
   <body id="top" data-page-family={page.module}>
     <a class="skip-link" href="#main-content">Skip to content</a>
-    <div class="coordinate" aria-hidden="true">
-      <span>00.00</span>
-      <span>{brandPresentation.coordinateLabel}</span>
-    </div>
     <Header currentRoute={page.route} />
     <slot />
     <Footer />

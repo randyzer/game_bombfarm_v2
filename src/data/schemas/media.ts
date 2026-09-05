@@ -2,9 +2,24 @@ import { z } from "zod";
 
 const mediaIdSchema = z.string().regex(/^[a-z0-9]+(?:[.-][a-z0-9]+)*$/);
 const imageExtensions = /\.(?:png|jpe?g|webp|avif|gif|svg)$/i;
+const videoExtensions = /\.(?:mp4|webm)$/i;
 
 function isLocalImagePath(src: string): boolean {
   if (!src.startsWith("/media/") || !imageExtensions.test(src)) return false;
+
+  return src
+    .slice("/media/".length)
+    .split("/")
+    .every(
+      (segment) =>
+        segment !== "." &&
+        segment !== ".." &&
+        /^[a-z0-9._-]+$/i.test(segment),
+    );
+}
+
+function isLocalVideoPath(src: string): boolean {
+  if (!src.startsWith("/media/") || !videoExtensions.test(src)) return false;
 
   return src
     .slice("/media/".length)
@@ -70,10 +85,17 @@ export const videoAssetSchema = z
   .object({
     ...commonAssetShape,
     type: z.literal("video"),
-    src: z.string().regex(
-      /^[A-Za-z0-9_-]{11}$/,
-      "Video src must be a canonical 11-character YouTube ID.",
+    src: z.string().refine(
+      (value) => /^[A-Za-z0-9_-]{11}$/.test(value) || isLocalVideoPath(value),
+      "Video src must be a canonical 11-character YouTube ID or a safe local MP4/WebM path under /media/.",
     ),
+    poster: z
+      .string()
+      .refine(
+        isLocalImagePath,
+        "Video poster must be a safe local image path under /media/.",
+      )
+      .optional(),
     alt: descriptiveTextSchema,
   })
   .strict();

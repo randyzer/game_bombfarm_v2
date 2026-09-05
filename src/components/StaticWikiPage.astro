@@ -12,7 +12,10 @@ import {
   buildCanonicalUrl,
 } from "../core/seo";
 import type { PageInventoryEntry } from "../data/schemas/page-inventory";
+import { mediaCatalog } from "../data/media/catalog";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import GameMedia from "./media/GameMedia.astro";
+import ScreenshotGallery from "./media/ScreenshotGallery.astro";
 import FAQ from "./wiki/FAQ.astro";
 import QuickFacts from "./wiki/QuickFacts.astro";
 import RelatedPages from "./wiki/RelatedPages.astro";
@@ -24,6 +27,7 @@ interface Props {
 
 const { page } = Astro.props;
 const copy = getStaticWikiCopy(page.pageId);
+const pageMedia = mediaCatalog.getPageMedia(page.pageId);
 const relatedPages = getRelatedPages(page);
 const lastVerified = [...page.sources]
   .sort((left, right) => right.accessedAt.localeCompare(left.accessedAt))
@@ -74,6 +78,11 @@ const structuredData = [
         </dl>
       </header>
 
+      {pageMedia.heroMedia && (
+        <div class="page-media" data-media-placement="hero">
+          <GameMedia asset={pageMedia.heroMedia} eager />
+        </div>
+      )}
       <QuickFacts items={copy?.quickFacts ?? []} />
 
       <div class="article__layout wiki-article__layout wiki-article__layout--single">
@@ -105,6 +114,16 @@ const structuredData = [
         </div>
       </div>
 
+      {pageMedia.galleryMedia.length > 0 && (
+        <div class="page-media" data-media-placement="gallery">
+          <ScreenshotGallery assets={pageMedia.galleryMedia} />
+        </div>
+      )}
+      {pageMedia.trailerMedia && (
+        <div class="page-media" data-media-placement="trailer">
+          <GameMedia asset={pageMedia.trailerMedia} />
+        </div>
+      )}
       <FAQ items={copy?.faq ?? []} />
       <RelatedPages pages={relatedPages} />
       <Sources sources={page.sources} />

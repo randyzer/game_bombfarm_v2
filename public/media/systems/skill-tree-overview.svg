@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Bomb Farm skill tree overview</title>
+  <desc id="desc">An original diagram showing a shared skill tree branching toward 20 upgradeable abilities.</desc>
+  <rect width="1200" height="675" fill="#15110d"/>
+  <path d="M600 560V390M600 390L350 245M600 390L850 245M350 245L225 120M350 245L475 120M850 245L725 120M850 245L975 120" fill="none" stroke="#8e6d35" stroke-width="12"/>
+  <g fill="#211a13" stroke="#d1a84e" stroke-width="8">
+    <rect x="460" y="515" width="280" height="96" rx="6"/>
+    <circle cx="600" cy="390" r="58"/>
+    <circle cx="350" cy="245" r="46"/>
+    <circle cx="850" cy="245" r="46"/>
+    <circle cx="225" cy="120" r="36"/>
+    <circle cx="475" cy="120" r="36"/>
+    <circle cx="725" cy="120" r="36"/>
+    <circle cx="975" cy="120" r="36"/>
+  </g>
+  <g fill="#f4ead3" font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="554" font-size="22" font-weight="700">SHARED SKILL TREE</text>
+    <text x="600" y="584" fill="#bcae94" font-size="16">Plan before spending</text>
+    <text x="600" y="399" font-size="24" font-weight="700">20</text>
+    <text x="350" y="252" font-size="18" font-weight="700">1-10</text>
+    <text x="850" y="252" font-size="18" font-weight="700">1-10</text>
+    <text x="600" y="650" fill="#58c7b3" font-size="18" font-weight="700">20 ABILITIES, EACH UPGRADEABLE FROM LEVEL 1 TO 10</text>
+  </g>
+</svg>
