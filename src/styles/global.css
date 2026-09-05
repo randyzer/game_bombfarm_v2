@@ -2382,9 +2382,14 @@ select:focus-visible {
 }
 
 .site-footer {
-  padding-block: 70px;
-  background: var(--color-text);
-  color: var(--color-background);
+  padding-block: 58px;
+  border-top: 1px solid var(--color-border-strong);
+  background: color-mix(in srgb, var(--color-surface) 68%, var(--color-background));
+  color: var(--color-text);
+}
+
+.site-footer .eyebrow {
+  color: var(--color-primary);
 }
 
 .tool-shell {
@@ -2596,21 +2601,22 @@ select:focus-visible {
 
 .site-footer__grid {
   display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
-  gap: 60px;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
 }
 
 .site-footer__statement {
-  max-width: 650px;
-  margin: 20px 0 0;
+  max-width: 620px;
+  margin: 16px 0 0;
   font-family: var(--display);
-  font-size: clamp(2rem, 4vw, 4.2rem);
+  font-size: clamp(2rem, 3.6vw, 3.6rem);
   letter-spacing: 0;
-  line-height: 0.95;
+  line-height: 0.98;
 }
 
 .site-footer__meta {
   align-self: end;
+  color: var(--color-text-muted);
   font-family: var(--mono);
   font-size: 0.6rem;
   letter-spacing: 0.07em;
@@ -2622,10 +2628,21 @@ select:focus-visible {
   margin: 0;
 }
 
+.site-footer__meta p:first-child {
+  color: var(--color-text);
+}
+
 .site-footer__meta a {
   display: inline-block;
   margin-top: 22px;
-  color: var(--color-surface);
+  color: var(--color-primary);
+  text-decoration-color: transparent;
+  transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+
+.site-footer__meta a:hover {
+  color: var(--color-accent-strong);
+  text-decoration-color: currentColor;
 }
 
 .reveal {
@@ -2989,6 +3006,27 @@ select:focus-visible {
 
   .site-footer__grid {
     grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .site-footer {
+    padding-block: 46px;
+  }
+
+  .site-footer__statement {
+    margin-top: 14px;
+    font-size: clamp(1.85rem, 8vw, 2.7rem);
+    line-height: 1;
+  }
+
+  .site-footer__links {
+    margin-top: 14px;
+    flex-wrap: wrap;
+    row-gap: 6px;
+  }
+
+  .site-footer__meta a {
+    margin-top: 18px;
   }
 
   .guide-index a {
